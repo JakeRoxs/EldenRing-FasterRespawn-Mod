@@ -1,5 +1,4 @@
 #include <thread>
-#include "pch.h"
 #include <Windows.h>
 
 #include "ModUtils.h"
