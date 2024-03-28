@@ -1,3 +1,4 @@
+#include <thread>
 #include "pch.h"
 #include <Windows.h>
 
@@ -7,6 +8,9 @@ using namespace ModUtils;
 
 DWORD WINAPI MainThread(LPVOID lpParam)
 {
+	using namespace std::chrono_literals;
+	std::this_thread::sleep_for(5s);
+
 	Log("Activating FasterRespawn...");
 	std::vector<uint16_t> pattern = { 0x74, MASKED, 0xf3, 0x0f, 0x10, 0x19 };
 	std::vector<uint16_t> originalBytes = { 0x74, 0x06 };
